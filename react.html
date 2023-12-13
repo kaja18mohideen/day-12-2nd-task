@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart App</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    header {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 1em;
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      margin: 20px;
+    }
+
+    .product-list, .cart {
+      width: 45%;
+      padding: 20px;
+      box-sizing: border-box;
+      background-color: white;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    button {
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    .cart-title {
+      text-align: center;
+    }
+
+    .cart-quantity {
+      text-align: center;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Shop in style</h1>
+  </header>
+
+  <div class="container">
+    <div class="product-list">
+      <h2>Product List</h2>
+      <ul>
+        <li>
+          <h3>Skybags Trooper 55 Cms Small Cabin Polycarbonate Hard Sided 4 Spinner Wheels Luggage/Suitcase/Trolley Bag- Blue and White</h3>
+          <p>Outer Material: Polycarbonate, Casing: Hard, Color: Blue
+Not water resistant
+Capacity: 28 liters; Weight: 2360 grams; Dimensions: 38 cms x 21 cms x 55 cms (LxWxH)
+Lock Type: Number Lock, Number of Wheels: 4
+Laptop Compatibility: No. Closure: Zipper
+Warranty type: Manufacturer; 1 Year international warranty</p>
+<img src= https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/41V59cuiguL._SY300_SX300_.jpg />
+
+         <button onclick="addToCart(2)">Add to Cart</button>  
+        </li>
+        <li>
+          <h3>Apple iPhone 15 (128 GB) - Blue</h3>
+          <p>DYNAMIC ISLAND COMES TO IPHONE 15 — Dynamic Island bubbles up alerts and Live Activities — so you don’t miss them while you’re doing something else. You can see who’s calling, track your next ride, check your flight status, and so much more.
+INNOVATIVE DESIGN — iPhone 15 features a durable color-infused glass and aluminum design. It’s splash, water, and dust resistant. The Ceramic Shield front is tougher than any smartphone glass. And the 6.1" Super Retina XDR display is up to 2x brighter in the sun compared to iPhone 14.</p>
+<img src=  https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/71d7rfSl0wL._AC_UY218_.jpg />
+          <button onclick="addToCart(2)">Add to Cart</button>
+        </li>
+        
+      </ul>
+    </div>
+
+    <div class="cart">
+      <h2 class="cart-title">Shopping Cart</h2>
+      <div class="cart-quantity" id="cartQuantity">Cart Quantity: 0</div>
+      <ul id="cartList"></ul>
+    </div>
+  </div>
+
+  <script>
+    
+    function addToCart(productId) {
+      const cartList = document.getElementById('cartList');
+      const cartQuantity = document.getElementById('cartQuantity');
+
+      
+      const cartItem = document.createElement('li');
+      cartItem.textContent = `Product ${productId}`;
+      cartList.appendChild(cartItem);
+
+      
+      cartQuantity.textContent = `Cart Quantity: ${cartList.children.length}`;
+    }
+  </script>
+</body>
+</html>
